@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center display-1" style="color: #77ee07;"> Rick and <span style="color: #ec8b0b;">Morty</span>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <rick-search (eventSearch)="searchRick($event)"></rick-search>
+</div>
+<rick-paginacion (eventNewRicks)="setNewRicks($event)"></rick-paginacion>
+<rick-card [ricksAll]="ricks"></rick-card>
+<rick-paginacion></rick-paginacion>

@@ -1,0 +1,18 @@
+img.rounded-circle{
+    border-radius: 50%;
+  }
+.btn-login-morado {
+  background-color: #e90d0d;
+  color: #fdfafa;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-login-morado:hover {
+  background-color: #0ec707;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}

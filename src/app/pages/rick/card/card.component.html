@@ -1,0 +1,40 @@
+<div class="row mb-3 g-3">
+  <ng-container *ngIf="ricksAll && ricksAll.results && ricksAll.results.length > 0; else noRicks">
+    <div class="col-3" *ngFor="let rick of ricksAll.results">
+      <div class="card fixed-card">
+        <div *ngIf="!CargaImagen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 100 100">
+            <path d="M50 30 L58 32 L60 40 L68 42 L70 50 L68 58 L60 60 L58 68 L50 70 L42 68 L40 60 L32 58 L30 50 L32 42 L40 40 L42 32 Z"
+                  fill="#e60000">
+              <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="2s" repeatCount="indefinite"/>
+            </path>
+          </svg>
+        </div>
+
+        <img 
+          [src]="rick.image" 
+          class="card-img-top fixed-img" 
+          alt="..."
+          loading="lazy"
+          (load)="CargaImagen=true"
+        >
+
+        <div class="card-body fixed-body">
+          <h5 class="card-title">{{rick.name}}</h5>
+          <p class="card-text">Especie: {{rick.species}}</p>
+          <li class="btn btn-outline-primary" (click)="openModal(rick)">Mas Informacion</li>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noRicks>
+    <div class="col-12">
+      <div class="alert alert-warning" role="alert">
+        No se han encontrado personajes de Rick and Morty.
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<rick-modal></rick-modal>
